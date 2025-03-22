@@ -17,7 +17,7 @@ app.get('/colors', async (req, res) => {
         const { type, color, page = 1, limit = 20 } = req.query;
         const offset = (Math.max(page, 1) - 1) * limit;
 
-        let query = 'SELECT * FROM colorPalettes WHERE 1=1';
+        let query = 'SELECT * FROM colorpalettes WHERE 1=1';
         let queryParams = [];
 
         if (type) {
@@ -31,8 +31,6 @@ app.get('/colors', async (req, res) => {
 
         query += ' LIMIT ? OFFSET ?';
         queryParams.push(parseInt(limit), parseInt(offset));
-
-
 
         const [results] = await pool.query(query, queryParams);
         res.json(results);
@@ -102,7 +100,6 @@ app.post('/colors/:id/like', async (req, res) => {
     }
 
     try {
-
         // ✅ 해당 사용자의 좋아요 여부 확인
         const [rows] = await pool.query('SELECT * FROM likes WHERE user_id = ? AND color_id = ?', [user_id, id]);
 
