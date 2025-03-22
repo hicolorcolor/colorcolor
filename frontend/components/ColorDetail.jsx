@@ -61,8 +61,7 @@ const ColorDetail = () => {
         loadColorData();
     }, [id]);
 
-    if (loading) return <p className="loading">⏳ 로딩 중...</p>;
-    if (!colorData) return <p className="error">❌ 컬러 정보를 찾을 수 없습니다.</p>;
+    if (!colorData) return <p className="error"> 컬러 정보를 찾을 수 없습니다.</p>;
 
     return (
         <Layout
