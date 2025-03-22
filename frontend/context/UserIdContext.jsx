@@ -1,4 +1,5 @@
 import { createContext, useContext, useEffect, useState } from 'react';
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'https://colorcolor.onrender.com';
 
 const UserContext = createContext();
 
@@ -21,7 +22,7 @@ export const UserProvider = ({ children }) => {
         // ✅ 서버에서 좋아요 데이터 불러오기
         const fetchLikedItems = async () => {
             try {
-                const response = await fetch(`http://localhost:5000/user/${storedUserId}/likes`);
+                const response = await fetch(`${API_BASE_URL}/user/${storedUserId}/likes`);
                 if (!response.ok) throw new Error(`서버 오류: ${response.status}`);
 
                 const data = await response.json();

@@ -36,7 +36,7 @@ const ColorDetail = () => {
     const [copiedRgb, setCopiedRgb] = useState(null);
 
     const [copyUrl, setCopyUrl] = useState('Link');
-    const URLCOPY = `http://localhost:5173/color/${id}`;
+    const URLCOPY = `https://colorcolor.vercel.app/color/${id}`;
 
     const { isMobile } = useContext(MediaQueryContext);
 

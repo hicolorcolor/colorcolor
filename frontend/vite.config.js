@@ -7,7 +7,7 @@ export default defineConfig({
     server: {
         proxy: {
             '/colors/api': {
-                target: 'http://localhost:3000', // ✅ 백엔드 주소
+                target: 'https://colorcolor.onrender.com', // ✅ 백엔드 주소
                 changeOrigin: true,
                 secure: false,
             },

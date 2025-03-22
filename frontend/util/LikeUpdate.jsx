@@ -2,8 +2,10 @@ export const handleLikeToggle = async (event, id, setFilteredColors, setLikedIte
     event.preventDefault();
     event.stopPropagation();
 
+    const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'https://colorcolor.onrender.com';
+
     try {
-        const response = await fetch(`http://localhost:5000/colors/${id}/like`, {
+        const response = await fetch(`${API_BASE_URL}/colors/${id}/like`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import { useUser } from '../context/UserIdContext'; // ✅ 전역 Context 사용
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'https://colorcolor.onrender.com';
 
 import React from 'react';
 
@@ -11,7 +12,7 @@ function UserLike() {
 
         const fetchLikedItems = async () => {
             try {
-                const response = await fetch(`http://localhost:5000/user/${userId}/likes`);
+                const response = await fetch(`${API_BASE_URL}/user/${userId}/likes`);
                 if (!response.ok) throw new Error(`서버 오류: ${response.status}`);
 
                 const data = await response.json();

@@ -154,5 +154,5 @@ app.get('/user/:user_id/likes', async (req, res) => {
 
 //  서버 실행
 app.listen(5000, () => {
-    console.log('🚀 서버 실행 중: http://localhost:5000');
+    console.log('🚀 서버 실행 중');
 });
