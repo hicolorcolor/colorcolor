@@ -1,0 +1,152 @@
+/*  전체 컨테이너 */
+.palette-container {
+    margin: var(--header-height) var(--side-width) 0rem var(--side-width);
+    display: flex;
+    gap: 2rem;
+    padding: 3rem;
+    min-height: 100dvh;
+}
+
+/*  컬러 팔레트 그리드 */
+.palette-grid {
+    width: 100%;
+    display: grid;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    flex-direction: row;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(20%, 1fr));
+    gap: 3rem;
+    justify-content: space-around;
+}
+
+/* 개별 카드 스타일 */
+.palette-grid a {
+    margin: 1rem;
+    display: block;
+    border-radius: 50%;
+    transition: transform 0.2s ease-in-out;
+    /*  width와 height를 자동 동기화 */
+    aspect-ratio: 1 / 1;
+}
+.palette-grid a:hover {
+    transform: scale(1.05);
+}
+.palette-card {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+/*  색상 리스트 */
+.palette-colors {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+.palette-color {
+    flex: 1; /* 색상을 균등하게 배치 */
+    width: 100%;
+    position: relative;
+}
+.palette-color .pcHover {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 0.5rem 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s;
+    color: white;
+    background-color: #22222213;
+    border-radius: 1rem;
+    font-size: 1.5rem;
+}
+.palette-color:hover .pcHover {
+    opacity: 1;
+}
+
+/*  좋아요 및 업로드 시간 표시 */
+.palette-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 2rem;
+}
+.palette-info > .palette-types {
+    display: flex;
+    align-items: center;
+    padding: 0.8rem 1rem;
+    border: 1px solid #cccccc4f;
+    border-radius: 1rem;
+}
+.palette-info > .palette-types img {
+    width: 2rem;
+    height: 2rem;
+    object-fit: contain;
+}
+.palette-info > .palette-types span {
+    font-size: 1.6rem;
+    display: flex;
+    gap: 0.5rem;
+}
+.palette-info > .palette-date {
+}
+.palette-info > .palette-date span {
+    font-size: 1.6rem;
+}
+
+.palette-likes {
+    font-weight: bold;
+}
+.palette-time {
+    font-style: italic;
+}
+
+/* 필터링된 목록이 사라질 때 */
+.fadeOut {
+    opacity: 0;
+    transition: opacity 0.3s ease-out;
+}
+
+/* 필터링된 목록이 나타날 때 */
+.fadeIn {
+    opacity: 1;
+    transition: opacity 0.3s ease-in;
+}
+
+.scrollBottomCheck {
+    width: 100%;
+    height: 100px;
+    visibility: hidden;
+}
+@media (max-width: 850px) {
+    .palette-container {
+        margin: var(--header-height) 0 0rem var(--side-width);
+    }
+    .palette-grid {
+        grid-template-columns: repeat(auto-fill, minmax(40%, 0fr));
+    }
+    .palette-info {
+        margin-top: 3rem;
+    }
+}
+@media (max-width: 500px) {
+    .palette-grid {
+        grid-template-columns: repeat(auto-fill, minmax(80%, 0fr));
+        gap: 5rem;
+    }
+    .palette-info > .palette-types span,
+    .palette-info > .palette-date span {
+        font-size: 2rem;
+    }
+    .palette-info > .palette-types img {
+        width: 2.5rem;
+        height: 2.5rem;
+    }
+}

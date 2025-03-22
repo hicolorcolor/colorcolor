@@ -1,0 +1,550 @@
+/* 폰트 정의 */
+@font-face {
+    font-family: 'Pretendard';
+    font-weight: 500;
+    src: url(/public/Pretendard-Medium.woff) format('woff');
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    font-weight: 300;
+    src: url(/public/Pretendard-ExtraLight.woff) format('woff');
+}
+@font-face {
+    font-family: 'Pretendard';
+    font-weight: 400;
+    src: url(/public/Pretendard-Regular.woff) format('woff');
+}
+
+@font-face {
+    font-family: 'Encode Sans Expanded';
+    src: url('/EncodeSansExpanded-Thin.ttf') format('truetype');
+    font-weight: 100;
+}
+
+@font-face {
+    font-family: 'Encode Sans Expanded';
+    src: url('/EncodeSansExpanded-ExtraLight.ttf') format('truetype');
+    font-weight: 200;
+}
+
+@font-face {
+    font-family: 'Encode Sans Expanded';
+    src: url('/EncodeSansExpanded-Light.ttf') format('truetype');
+    font-weight: 300;
+}
+
+@font-face {
+    font-family: 'Encode Sans Expanded';
+    src: url('/EncodeSansExpanded-Regular.ttf') format('truetype');
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'Encode Sans Expanded';
+    src: url('/EncodeSansExpanded-Medium.ttf') format('truetype');
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: 'Encode Sans Expanded';
+    src: url('/EncodeSansExpanded-SemiBold.ttf') format('truetype');
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: 'Encode Sans Expanded';
+    src: url('/EncodeSansExpanded-Bold.ttf') format('truetype');
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: 'Encode Sans Expanded';
+    src: url('/EncodeSansExpanded-ExtraBold.ttf') format('truetype');
+    font-weight: 800;
+}
+
+@font-face {
+    font-family: 'Encode Sans Expanded';
+    src: url('/EncodeSansExpanded-Black.ttf') format('truetype');
+    font-weight: 900;
+}
+
+@font-face {
+    font-family: 'PoiretOne';
+    font-weight: 400;
+    src: url(/public/PoiretOne-Regular.ttf) format('truetype');
+}
+.Pretendard-r {
+    font-family: 'Pretendard';
+    font-weight: 300;
+}
+.Pretendard-m {
+    font-family: 'Pretendard';
+    font-weight: 400;
+}
+
+.Pretendard-b {
+    font-family: 'Pretendard';
+    font-weight: 500;
+}
+.Megrim {
+    font-family: 'Megrim', sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+.Audiowide {
+    font-family: 'Audiowide', sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+.PoiretOne {
+    font-family: 'PoiretOne', sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+.Encode {
+    font-family: 'Encode Sans Expanded', 'Pretendard-r';
+}
+/* 그라디언트 폰트 스타일 */
+.gradient_text {
+    background: linear-gradient(90deg, #c54261, #f47555);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-align: center;
+}
+
+/* .gradient_Bg {
+  background-image: url('/public/bg2.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+}
+.gradient_Bg::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  filter: blur(1.5rem);
+  opacity: 0.24;
+} */
+
+/* 기본 라이트 모드 */
+:root {
+    --background-color: #000022;
+    --text-color: #eaeaea;
+    --header-color: #222222;
+    --filter-bg: #222222;
+    --search-bar-bg: #303030;
+    --box-shadow-color: rgb(255 255 255 / 10%);
+    --filter-color: invert(1);
+    --side-width: 20rem;
+}
+@media (max-width: 500px) {
+    :root {
+        --side-width: 22rem;
+    }
+}
+
+/* 다크모드 */
+.darkMode {
+    --background-color: white;
+    --text-color: #222222;
+    --header-color: #ffffff;
+    --filter-bg: #ffffff;
+    --search-bar-bg: rgb(243, 243, 243);
+    --box-shadow-color: rgba(0, 0, 0, 0.1);
+}
+
+.darkMode .Header,
+.darkMode .Header .menu {
+    background-color: white;
+}
+.normal img {
+    filter: invert(1);
+}
+.LeftReset img {
+    filter: invert(1);
+}
+img {
+    filter: invert(0);
+}
+.LeftReset img {
+    filter: invert(0);
+}
+.normal button {
+    color: inherit;
+    background-color: inherit;
+}
+
+/* 전역 스타일 적용 */
+#root {
+    transition: background-color 0.3s ease;
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+/* 공통 적용 */
+.header {
+    background-color: var(--header-color);
+}
+.header .search-bar {
+    width: 100%;
+    background-color: var(--search-bar-bg);
+    color: var(--text-color);
+}
+.HomeHeader {
+    background-color: var(--header-color);
+}
+.font-list-container .filter-container {
+    background-color: var(--filter-bg);
+}
+.font-list-container .filterFontList a .font-item {
+    box-shadow: var(--box-shadow-color) 1px 1px 10px;
+    color: var(--text-color);
+}
+.side-content,
+.FixSideContent,
+.HomeHeader .HomeHeaderWrap {
+    background-color: var(--background-color);
+    transition: background-color 0.3s ease;
+}
+
+.darkMode .HomeTemplateHead,
+.darkMode .HomeTemplateContent {
+    background: #222;
+}
+.HomeHeader .HomeHeaderWrap {
+}
+.rfm-child {
+    all: unset !important;
+    display: inline-block !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    line-height: normal !important;
+}
+/* 아이콘 css */
+
+.FixSideContent.Mob .material-symbols-outlined {
+    font-size: 6.5rem !important;
+}
+.material-symbols-outlined {
+    font-size: 3.5rem !important;
+    color: currentColor;
+    display: inline-block;
+    line-height: 1;
+    font-variation-settings: 'FILL' 0, 'wght' 100, 'GRAD' 0, 'opsz' 48;
+}
+
+.smallMaterial {
+    width: 2.5rem !important; /* 크기 */
+    font-variation-settings: 'FILL' 0, /* 0: 비움, 1: 채움 */ 'wght' 300, /* 글자 두께 (100 ~ 700) */ 'GRAD' 0,
+        /* 기울기 효과 (0 ~ 200) */ 'opsz' 48; /* 최적 크기 */
+    filter: var(--filter-color);
+}
+
+.smallMaterial img {
+    width: 100%;
+    object-fit: cover;
+}
+/* 기본설정 CSS */
+/* 기본설정 CSS */
+/* 기본설정 CSS */
+/* 기본설정 CSS */
+/* 기본 설정 */
+html {
+    font-size: 62.5%; /* 1rem = 10px (기본적으로 16px이므로 62.5%로 설정) */
+}
+
+/* 기본 폰트 설정 */
+body,
+button {
+    font-size: 1.6rem; /* 16px */
+    font-family: 'Pretendard';
+    background-color: white;
+}
+
+/* 반응형 크기 조절 */
+@media (max-width: 1200px) {
+    html {
+        font-size: 56.25%; /* 1rem = 9px */
+    }
+}
+
+@media (max-width: 992px) {
+    html {
+        font-size: 50%; /* 1rem = 8px */
+    }
+}
+
+@media (max-width: 768px) {
+    html {
+        font-size: 46.875%; /* 1rem = 7.5px */
+    }
+}
+
+@media (max-width: 480px) {
+    html {
+        font-size: 43.75%; /* 1rem = 7px */
+    }
+}
+
+@media (max-width: 360px) {
+    html {
+        font-size: 37.5%; /* 1rem = 6px */
+    }
+}
+
+body * {
+    box-sizing: border-box;
+}
+:root {
+    --footer-height: 10rem;
+    --header-height: 7rem;
+    --homeHeader-height: 5rem;
+}
+.bgColorBlack {
+    background-color: black;
+    color: white;
+}
+ul li {
+    list-style: none;
+    padding: 0;
+}
+/* 스크롤바 css */
+/* 스크롤바 css */
+/* 스크롤바 css */
+/* 스크롤바 css */
+/* 스크롤바 변경 */
+.scrollBar {
+    overflow-y: scroll;
+}
+
+/* 아래의 모든 코드는 영역::코드로 사용 */
+.scrollBar::-webkit-scrollbar {
+    width: 2px; /* 스크롤바의 너비 */
+}
+
+.scrollBar::-webkit-scrollbar-thumb {
+    height: 30%; /* 스크롤바의 길이 */
+    background: #983c3caf; /* 스크롤바의 색상 */
+    border-radius: 10px;
+}
+
+.scrollBar::-webkit-scrollbar-track {
+    background: rgba(58, 58, 58, 0.507); /*스크롤바 뒷 배경 색상*/
+}
+
+/* 인풋 타입 range */
+/* 인풋 타입 range */
+/* 인풋 타입 range */
+/* 인풋 타입 range */
+/* 인풋 타입 range */
+/* 기본 스타일 제거 */
+/* 기본 스타일 제거 */
+.range input[type='range'] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 2px;
+    background: #545454; /* 블랙 트랙 */
+    border-radius: 5px;
+    outline: none;
+    transition: background 0.3s;
+    position: relative;
+}
+
+/* 트랙 스타일 - Chrome, Safari, Edge */
+.range input[type='range']::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 2px;
+    background: #545454; /* 블랙 트랙 */
+    border-radius: 5px;
+}
+
+/* 트랙 스타일 - Firefox */
+.range input[type='range']::-moz-range-track {
+    width: 100%;
+    height: 2px;
+    background: #545454; /* 블랙 트랙 */
+    border-radius: 5px;
+}
+
+/* 🔥 슬라이더 썸(Thumb) 중앙 정렬 - Chrome, Safari, Edge */
+.range input[type='range']::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    background: #fff; /* 화이트 썸 */
+    border: 2px solid #545454; /* 블랙 테두리 */
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+    margin-top: -8px; /* ✅ 중앙 정렬을 위해 조정 */
+}
+
+/* 🔥 슬라이더 썸(Thumb) 중앙 정렬 - Firefox */
+.range input[type='range']::-moz-range-thumb {
+    width: 18px;
+    height: 18px;
+    background: #fff;
+    border: 2px solid #545454;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+}
+
+/* 중앙 정렬을 위한 Firefox 추가 스타일 */
+.range input[type='range']::-moz-range-track {
+    height: 6px;
+}
+
+/* 🎨 썸(Thumb) 호버 & 클릭 효과 */
+.range input[type='range']:hover::-webkit-slider-thumb {
+    background: #545454;
+    border: 2px solid #fff;
+}
+
+.range input[type='range']:active::-webkit-slider-thumb {
+    transform: scale(1.2);
+}
+
+/* Firefox 호버 & 클릭 효과 */
+input[type='range']:hover::-moz-range-thumb {
+    background: #545454;
+    border: 2px solid #fff;
+}
+
+.range input[type='range']:active::-moz-range-thumb {
+    transform: scale(1.2);
+}
+
+/* 여백 초기화 */
+body,
+div,
+ul,
+li,
+dl,
+dd,
+dt,
+ol,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+input,
+fieldset,
+legend,
+p,
+select,
+table,
+th,
+td,
+tr,
+textarea,
+button,
+form,
+figure,
+figcaption {
+    margin: 0;
+    padding: 0;
+}
+
+/* a 링크 초기화 */
+a {
+    color: currentColor;
+    text-decoration: none;
+}
+
+/* 폰트 스타일 초기화 */
+em,
+address {
+    font-style: normal;
+}
+
+/* 블릿기호 초기화 */
+ul,
+li,
+ol {
+    list-style: none;
+}
+
+/* 제목 태그 초기화 */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: normal;
+}
+
+/* 테두리 초기화 */
+img,
+fieldset {
+    border: 0 none;
+}
+
+/* 버튼 초기화 */
+button {
+    border: 0;
+}
+
+/* 반응형 */
+video,
+img {
+    /* width: 100%; */
+    display: block;
+}
+
+/* clearfix */
+.clearfix {
+    zoom: 1;
+}
+
+.clearfix:before,
+.clearfix:after {
+    display: block;
+    content: '';
+    line-height: 0;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+/* IR 효과 */
+.ir_pm {
+    display: block;
+    overflow: hidden;
+    font-size: 0;
+    line-height: 0;
+    text-indent: -9999px;
+}
+
+/* 의미있는 이미지의 대체 텍스트를 제공하는 경우(Phark Method) */
+.ir_wa {
+    display: block;
+    overflow: hidden;
+    position: relative;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+}
+
+/* 의미있는 이미지의 대체 텍스트로 이미지가 없어도 대체 텍스트를 보여주고자 할 때(WA IR) */
+.ir_so {
+    overflow: hidden;
+    position: absolute;
+    width: 0;
+    height: 0;
+    line-height: 0;
+    text-indent: -9999px;
+}

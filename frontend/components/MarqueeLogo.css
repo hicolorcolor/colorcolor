@@ -1,0 +1,29 @@
+.marquee-wrapper {
+    width: 100%;
+    overflow: hidden;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.marquee-content {
+    display: flex;
+    width: max-content;
+    animation: scroll 15s linear infinite;
+}
+
+.color-box {
+    width: 8rem;
+    height: 1.2px;
+    flex-shrink: 0;
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0%);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}

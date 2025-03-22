@@ -1,0 +1,169 @@
+/* 🔹 필터 컨테이너 스타일 */
+.filter-container {
+    background: inherit;
+    padding: 2rem;
+    border-radius: 0 0 10px 10px;
+    border-left: 1px solid #cccccc4f;
+    border-right: 1px solid #cccccc4f;
+    border-bottom: 1px solid #cccccc4f;
+    position: absolute;
+    top: var(--header-height);
+    left: var(--side-width);
+    width: calc(100% - (var(--side-width) * 2));
+    display: none;
+}
+.filter-container.on {
+    display: block;
+}
+.filter-container > div {
+    margin: 3rem 0;
+}
+
+/* 🔍 검색창 */
+.search-input {
+    width: 100%;
+    padding: 1.2rem;
+    font-size: 1.4rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    outline: none;
+    transition: all 0.3s ease-in-out;
+}
+.search-input:focus {
+    border-color: #999;
+}
+
+/* 🔹 필터 섹션 */
+.filter-section {
+    margin-top: 2rem;
+}
+.filter-title {
+    font-size: 1.6rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+/* 🔹 필터 목록 */
+.filter-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+/* 🔹 필터 버튼 */
+.filter-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 1.4rem;
+    padding: 6px 12px;
+    border: 1px solid #ddd;
+    border-radius: 2rem;
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+.filter-item:hover {
+}
+.filter-item.active {
+    background: #e9e5df;
+    color: black;
+}
+
+/* 🔹 색상 원 (컬러칩) */
+.color-dot {
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 50%;
+    display: inline-block;
+    border: 1px solid #ddd;
+}
+
+.closeBtn {
+    background: inherit;
+    border: 1px solid #ccc;
+    border-radius: 50%;
+    position: absolute;
+    top: 1.7rem;
+    right: 2rem;
+    width: 3rem;
+    height: 3rem;
+    margin: 0 !important;
+    cursor: pointer;
+    padding: 0.3rem;
+    transition: 0.4s;
+}
+.closeBtn img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.Reset {
+    padding: 0 0 0 0.8rem;
+    background: inherit;
+    border-radius: 1rem;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 0 0 auto;
+    cursor: pointer;
+    transition: 0.3s;
+    border: 1px solid #ddd;
+}
+.Reset:hover {
+}
+.Reset:hover img {
+    transform: rotate(-180deg);
+}
+
+.Reset span {
+    font-size: 1.2rem;
+}
+
+.Reset img {
+    width: 3rem;
+    height: 3rem;
+    object-fit: contain;
+    transition: transform 0.4s;
+}
+@media (max-width: 850px) {
+    .filter-container {
+        width: calc(100% - (var(--side-width)));
+    }
+}
+@media (max-width: 500px) {
+    .closeBtn {
+        width: 4rem;
+        height: 4rem;
+    }
+    .filter-container {
+        width: 100%;
+        left: 0;
+        overflow-x: hidden;
+        overflow-y: scroll;
+        height: auto;
+        max-height: 100vh;
+    }
+    .filter-container h3 {
+        font-size: 2.5rem;
+    }
+    .filter-container > div {
+        gap: 1.5rem;
+    }
+    .filter-item {
+        gap: 1rem;
+        font-size: 1.8rem;
+    }
+    .Reset {
+        padding: 1rem 2rem;
+    }
+    .Reset span {
+        font-size: 2.5rem;
+    }
+    .Reset img {
+        width: 4.3rem;
+        height: 4.3rem;
+    }
+}

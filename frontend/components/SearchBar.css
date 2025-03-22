@@ -1,0 +1,32 @@
+.SearchBar {
+    width: calc(100% - (var(--side-width) * 2));
+}
+.Customsearch {
+    width: 100%;
+    padding: 1rem;
+    outline: none;
+    border: 1px solid #cccccc4f;
+    border-radius: 1.4rem;
+    font-size: 1.4rem;
+    font-weight: 500;
+    background-color: inherit;
+}
+
+.SearchBar {
+    position: relative;
+    display: inline-block;
+}
+
+.SearchBar input.Customsearch {
+    padding-left: 35px;
+}
+
+.SearchBar img {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 23px;
+    height: 23px;
+    pointer-events: none;
+}
