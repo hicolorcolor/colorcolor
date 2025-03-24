@@ -141,12 +141,15 @@
         grid-template-columns: repeat(auto-fill, minmax(80%, 0fr));
         gap: 5rem;
     }
+    .palette-info > .palette-types {
+        padding: 0.5rem 0.8rem;
+    }
     .palette-info > .palette-types span,
     .palette-info > .palette-date span {
         font-size: 2rem;
     }
     .palette-info > .palette-types img {
-        width: 2.5rem;
-        height: 2.5rem;
+        width: 2rem;
+        height: 2rem;
     }
 }
