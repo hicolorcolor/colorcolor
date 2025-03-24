@@ -99,10 +99,10 @@
     }
 
     .Header ul li.logo {
-        width: 18rem;
+        width: 17rem;
     }
     .Header ul li.logo > span {
-        font-size: 3.8rem;
+        font-size: 3rem;
     }
     .Header ul li.HeaderRight {
         width: auto;
@@ -113,7 +113,8 @@
     }
     .Customsearch {
         padding: 1.5rem;
-        font-size: 2rem;
+        font-size: 16px;
+        zoom: 0.7;
         font-weight: normal;
     }
     .Header ul li.HeaderRight > img {
@@ -130,5 +131,10 @@
     }
     .Header .menu ul li.dark img {
         width: 6rem;
+    }
+    .SearchBar img {
+        width: 15px;
+        height: 15px;
+        left: 8px;
     }
 }
