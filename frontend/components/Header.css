@@ -114,7 +114,7 @@
     .Customsearch {
         padding: 1.5rem;
         font-size: 16px;
-        zoom: 0.7;
+        transform: scaleY(0.85);
         font-weight: normal;
     }
     .Header ul li.HeaderRight > img {
