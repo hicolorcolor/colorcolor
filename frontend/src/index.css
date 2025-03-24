@@ -145,7 +145,7 @@
 }
 @media (max-width: 500px) {
     :root {
-        --side-width: 22rem;
+        --side-width: 17rem;
     }
 }
 

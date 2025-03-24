@@ -112,18 +112,18 @@
         margin-bottom: 4rem;
     }
     .LeftMenu .tap li span {
-        font-size: 2.5rem;
+        font-size: 2.2rem;
     }
     .LeftMenu .tap li img,
     .LeftReset img {
-        width: 4.5rem;
-        height: 4.5rem;
+        width: 3.5rem;
+        height: 3.5rem;
     }
     .LeftMenu .option {
         margin: 3rem 0;
     }
     .LeftMenu .option .optionItem {
-        font-size: 2.3rem;
+        font-size: 2.2rem;
         margin-bottom: 2.3rem;
     }
 }
