@@ -19,6 +19,7 @@
 
 .SearchBar input.Customsearch {
     padding-left: 35px;
+    color: inherit;
 }
 
 .SearchBar img {
