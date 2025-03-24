@@ -116,7 +116,6 @@
         font-size: 16px;
         transform: scaleY(0.85);
         font-weight: normal;
-        
     }
     .Header ul li.HeaderRight > img {
         width: 5rem;
@@ -134,8 +133,8 @@
         width: 6rem;
     }
     .SearchBar img {
-        width: 15px;
-        height: 15px;
+        width: 18px;
+        height: 18px;
         left: 8px;
     }
 }
