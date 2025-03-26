@@ -4,7 +4,6 @@ const db = require('../db'); // ✅ MySQL 연결
 
 // 좋아요 토글 API
 app.post('/:id/like', async (req, res) => {
-    // "/api/:id/like"가 아니라 "/:id/like"로 설정
     const { id } = req.params;
     const { user_id } = req.body;
 
