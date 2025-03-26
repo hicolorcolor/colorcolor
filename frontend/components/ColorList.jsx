@@ -78,7 +78,7 @@ const ColorList = () => {
     useEffect(() => {
         setFade(false); // 변경 시 먼저 투명하게
         setTimeout(() => setFade(true), 300); // 0.1초 뒤 페이드인 효과 적용
-    }, [typeFilter, colorFilter, search, colorFilter]); // 필터 변경 시 트랜지션 적용
+    }, [typeFilter, colorFilter, search, location]); // 필터 변경 시 트랜지션 적용
 
     return (
         <Layout
