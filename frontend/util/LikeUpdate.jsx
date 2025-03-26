@@ -30,7 +30,7 @@ export const handleLikeToggle = async (event, id, setFilteredColors, setLikedIte
             );
 
             setLikedItems((prev) => {
-                const newLikedItems = new Set(prev);
+                const newLikedItems = new Set(prev);;
                 if (data.liked) {
                     newLikedItems.add(id);
                 } else {

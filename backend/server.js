@@ -63,32 +63,32 @@ app.get('/colors/:id', async (req, res) => {
 });
 
 //  컬러 조합 저장 API
-app.post('/add-color', async (req, res) => {
-    const { colors, types } = req.body;
-    const query = `INSERT INTO colorpalettes (colors, types) VALUES (?, ?)`;
+// app.post('/add-color', async (req, res) => {
+//     const { colors, types } = req.body;
+//     const query = `INSERT INTO colorpalettes (colors, types) VALUES (?, ?)`;
 
-    try {
-        const [result] = await pool.query(query, [JSON.stringify(colors), JSON.stringify(types)]);
-        res.json({ message: '컬러 조합 저장 완료!' });
-    } catch (err) {
-        console.error('❌ 컬러 저장 실패:', err);
-        res.status(500).json(err);
-    }
-});
+//     try {
+//         const [result] = await pool.query(query, [JSON.stringify(colors), JSON.stringify(types)]);
+//         res.json({ message: '컬러 조합 저장 완료!' });
+//     } catch (err) {
+//         console.error('❌ 컬러 저장 실패:', err);
+//         res.status(500).json(err);
+//     }
+// });
 
-// 특정 컬러 포함된 조합 필터링 API
-app.get('/filter-colors', async (req, res) => {
-    const { color } = req.query;
-    const query = `SELECT * FROM colorpalettes WHERE JSON_CONTAINS(colors, CAST(? AS JSON))`;
+// // 특정 컬러 포함된 조합 필터링 API
+// app.get('/filter-colors', async (req, res) => {
+//     const { color } = req.query;
+//     const query = `SELECT * FROM colorpalettes WHERE JSON_CONTAINS(colors, CAST(? AS JSON))`;
 
-    try {
-        const [results] = await pool.query(query, [JSON.stringify([{ hex: color }])]);
-        res.json(results);
-    } catch (err) {
-        console.error('❌ 컬러 필터링 오류:', err);
-        res.status(500).json(err);
-    }
-});
+//     try {
+//         const [results] = await pool.query(query, [JSON.stringify([{ hex: color }])]);
+//         res.json(results);
+//     } catch (err) {
+//         console.error('❌ 컬러 필터링 오류:', err);
+//         res.status(500).json(err);
+//     }
+// });
 
 // ✅ 좋아요 토글 API
 app.post('/colors/:id/like', async (req, res) => {
@@ -106,16 +106,19 @@ app.post('/colors/:id/like', async (req, res) => {
         let newFavorite;
         let liked;
 
+        // ✅ 좋아요 취소 (기록 삭제)
         if (rows.length > 0) {
-            // ✅ 좋아요 취소 (기록 삭제)
+            //likes 테이블에서 해당 좋아요 기록 삭제
             await pool.query('DELETE FROM likes WHERE user_id = ? AND color_id = ?', [user_id, id]);
+            //colorpalettes 테이블의 해당 색상 좋아요 수 1 감소
             await pool.query('UPDATE colorpalettes SET favorite = favorite - 1 WHERE id = ?', [id]);
 
             const [updatedRows] = await pool.query('SELECT favorite FROM colorpalettes WHERE id = ?', [id]);
             newFavorite = updatedRows[0].favorite;
             liked = false;
-        } else {
-            // ✅ 좋아요 추가 (기록 저장)
+        }
+        // ✅ 좋아요 추가 (기록 저장)
+        else {
             await pool.query('INSERT INTO likes (user_id, color_id) VALUES (?, ?)', [user_id, id]);
             await pool.query('UPDATE colorpalettes SET favorite = favorite + 1 WHERE id = ?', [id]);
 
@@ -131,6 +134,7 @@ app.post('/colors/:id/like', async (req, res) => {
     }
 });
 
+// 사용자가 좋아요한 컬러 확인
 app.get('/user/:user_id/likes', async (req, res) => {
     const { user_id } = req.params;
 
