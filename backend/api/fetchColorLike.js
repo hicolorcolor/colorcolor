@@ -2,9 +2,9 @@ const express = require('express');
 const router = express.Router();
 const db = require('../db'); // ✅ MySQL 연결
 
-// ✅ 좋아요 토글 API
+// 좋아요 토글 API
 app.post('/:id/like', async (req, res) => {
-    // ✅ "/api/:id/like"가 아니라 "/:id/like"로 설정
+    // "/api/:id/like"가 아니라 "/:id/like"로 설정
     const { id } = req.params;
     const { user_id } = req.body;
 
@@ -17,7 +17,7 @@ app.post('/:id/like', async (req, res) => {
 
         let newFavorite;
         if (req.session?.likedPalettes?.[user_id]?.includes(id)) {
-            // ✅ 좋아요 취소
+            // 좋아요 취소
             await db.query('UPDATE colorpalettes SET favorite = favorite - 1 WHERE id = ?', [id]);
             newFavorite = rows[0].favorite - 1;
             req.session.likedPalettes[user_id] = req.session.likedPalettes[user_id].filter(
@@ -25,7 +25,7 @@ app.post('/:id/like', async (req, res) => {
             );
             return res.json({ liked: false, favorite: newFavorite });
         } else {
-            // ✅ 좋아요 추가
+            // 좋아요 추가
             await db.query('UPDATE colorpalettes SET favorite = favorite + 1 WHERE id = ?', [id]);
             newFavorite = rows[0].favorite + 1;
             req.session.likedPalettes[user_id] = [...(req.session.likedPalettes[user_id] || []), id];

@@ -8,7 +8,7 @@ import MediaQueryContext from '../context/MediaQueryContext';
 import Home from '../page/Home';
 import ColorList from '../components/ColorList';
 import ColorDetail from '../components/ColorDetail';
-import UserLike from '../page/UserLike';
+// import UserLike from '../page/UserLike';
 import ScrollToTop from '../components/ScrollToTopjsx';
 
 function App() {
@@ -23,7 +23,7 @@ function App() {
                                 <Route path="/" element={<Home />} />
                                 <Route path="/colors" element={<ColorList />} />
                                 <Route path="/color/:id" element={<ColorDetail />} />
-                                <Route path="/colors/userLike" element={<UserLike />} />
+                                {/* <Route path="/colors/userLike" element={<UserLike />} /> */}
                             </Routes>
                         </FilterProvider>
                     </MediaQueryContext>

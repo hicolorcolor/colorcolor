@@ -24,7 +24,7 @@ export const handleLikeToggle = async (event, id, setFilteredColors, setLikedIte
             setFilteredColors((prevColors) =>
                 prevColors.map((palette) =>
                     palette.id === id
-                        ? { ...palette, favorite: data.favorite } // ✅ 좋아요 숫자 동기화
+                        ? { ...palette, favorite: data.favorite } //  좋아요 숫자 동기화
                         : palette
                 )
             );
