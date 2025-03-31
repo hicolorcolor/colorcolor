@@ -40,7 +40,6 @@ export const FilterProvider = ({ children }) => {
             const filtered = colors.filter((palette) => normalizedLikedItems.has(palette.id));
             return filtered;
         }
-
         return sortedColors;
     };
 

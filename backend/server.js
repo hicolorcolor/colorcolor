@@ -62,33 +62,6 @@ app.get('/colors/:id', async (req, res) => {
     }
 });
 
-//  컬러 조합 저장 API
-// app.post('/add-color', async (req, res) => {
-//     const { colors, types } = req.body;
-//     const query = `INSERT INTO colorpalettes (colors, types) VALUES (?, ?)`;
-
-//     try {
-//         const [result] = await pool.query(query, [JSON.stringify(colors), JSON.stringify(types)]);
-//         res.json({ message: '컬러 조합 저장 완료!' });
-//     } catch (err) {
-//         console.error('❌ 컬러 저장 실패:', err);
-//         res.status(500).json(err);
-//     }
-// });
-
-// // 특정 컬러 포함된 조합 필터링 API
-// app.get('/filter-colors', async (req, res) => {
-//     const { color } = req.query;
-//     const query = `SELECT * FROM colorpalettes WHERE JSON_CONTAINS(colors, CAST(? AS JSON))`;
-
-//     try {
-//         const [results] = await pool.query(query, [JSON.stringify([{ hex: color }])]);
-//         res.json(results);
-//     } catch (err) {
-//         console.error('❌ 컬러 필터링 오류:', err);
-//         res.status(500).json(err);
-//     }
-// });
 
 // ✅ 좋아요 토글 API
 app.post('/colors/:id/like', async (req, res) => {
